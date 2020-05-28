@@ -10,11 +10,14 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def webhook():
+
   data = request.get_json()
 
   # We don't want to reply to ourselves!
+  msg = ''
   if data['name'] != 'EchoBot':
-    msg = '{}, you sent "{}".'.format(data['name'], data['text'])
+    msg+= '{}, you sent "{}".'.format(data['name'], data['text'])
+
     send_message(msg)
 
   return "ok", 200
