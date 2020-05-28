@@ -23,7 +23,7 @@ def webhook():
   msg = ''
   if data['name'] != 'EchoBot':
     msg+= '{}, you sent "{}".'.format(data['name'], data['text'])
-    msg += '\n' + days_to_target + " days till June 15th, 2020"
+    msg += '\n' + str(days_to_target) + " days till June 15th, 2020"
 
     send_message(msg)
 
