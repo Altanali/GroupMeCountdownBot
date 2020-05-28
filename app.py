@@ -19,20 +19,6 @@ def webhook():
 
   return "ok", 200
 
-{
-  "attachments": [],
-  "avatar_url": "https://i.groupme.com/750x1000.jpeg.a6bd93ffed43420493af7116ab1515c8",
-  "created_at": 1302623328,
-  "group_id": "59969540",
-  "id": "1234567890",
-  "name": "EchoBot",
-  "sender_id": "12345",
-  "sender_type": "user",
-  "source_guid": "GUID",
-  "system": False,
-  "text": "Hello world ☃☃",
-  "user_id": "1234567890"
-}
 
 def send_message(msg):
     url = 'https://api.groupme.com/v3/bots/post'
