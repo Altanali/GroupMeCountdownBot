@@ -29,7 +29,7 @@ def webhook():
   "sender_id": "12345",
   "sender_type": "user",
   "source_guid": "GUID",
-  "system": false,
+  "system": False,
   "text": "Hello world ☃☃",
   "user_id": "1234567890"
 }
