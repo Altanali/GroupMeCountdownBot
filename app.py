@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def webhook():
   targetDate = datetime.date(2020, 6, 15)
-  currentDate = datetime.date.fromtimestamp(datetime.time.time(),True)
+  currentDate = datetime.date.today()
   # if currentDate < targetDate:
   #     targetDate = targetDate.replace(year=currentDate.year + 1)
   time_to_target = abs(targetDate - currentDate)
