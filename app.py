@@ -21,7 +21,7 @@ def webhook():
 
   # We don't want to reply to ourselves!
   msg = ''
-  if data['name'] != '' and data['text'] == '!daysleft':
+  if data['name'] != 'TestBot2' or data['text'] == '!daysleft':
     msg += str(days_to_target) + " days till June 15th, 2020"
 
     send_message(msg)
