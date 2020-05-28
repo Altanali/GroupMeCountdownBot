@@ -1,6 +1,6 @@
 import os
 import json
-
+import datetime
 from urllib.parse import urlencode
 from urllib.request import  Request, urlopen
 
@@ -10,6 +10,12 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def webhook():
+  targetDate = datetime.date(2020, 6, 15)
+  currentDate = datetime.date.fromtimestamp(datetime.time.time(),True)
+  # if currentDate < targetDate:
+  #     targetDate = targetDate.replace(year=currentDate.year + 1)
+  time_to_target = abs(targetDate - currentDate)
+  days_to_target = time_to_target.days
 
   data = request.get_json()
 
@@ -17,6 +23,7 @@ def webhook():
   msg = ''
   if data['name'] != 'EchoBot':
     msg+= '{}, you sent "{}".'.format(data['name'], data['text'])
+    msg += '\n' + days_to_target + " days till June 15th, 2020"
 
     send_message(msg)
 
