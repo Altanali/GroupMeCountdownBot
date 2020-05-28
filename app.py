@@ -13,7 +13,7 @@ def webhook():
   data = request.get_json()
 
   # We don't want to reply to ourselves!
-  if data['name'] != 'altan-first-bot':
+  if data['name'] != 'EchoBot':
     msg = '{}, you sent "{}".'.format(data['name'], data['text'])
     send_message(msg)
 
