@@ -21,7 +21,7 @@ def webhook():
 
   # We don't want to reply to ourselves!
   msg = ''
-  if data['name'] != 'EchoBot':
+  if data['name'] != 'EchoBot' and data['text'] == '!daysleft':
     msg+= '{}, you sent "{}".'.format(data['name'], data['text'])
     msg += '\n' + str(days_to_target) + " days till June 15th, 2020"
 
